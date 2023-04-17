@@ -1,23 +1,22 @@
-import logo from './logo.svg';
+
 import './App.css';
+import ArticlesList from './components/ArticlesList';
+import Header from './components/header';
+import { Routes, Route } from 'react-router-dom';
+import React from 'react';
+import { useState } from "react";
+
 
 function App() {
+
+  const[articlesList,setArticlesList] = useState([]);
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Header/>
+      <Routes>
+        <Route path ="/" element = { <ArticlesList articlesList={articlesList} setArticlesList={setArticlesList}/> } />
+        <Route path ="/articles" element = { <ArticlesList/>} />
+      </Routes>
     </div>
   );
 }
