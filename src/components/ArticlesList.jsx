@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { fetchArticles } from "../utils/api";
+import ArticleCard from "./article_card";
 
 const ArticlesList =({articlesList, setArticlesList})=>{
 
@@ -32,8 +33,8 @@ return (
                 <h3 > {article.title} by {article.author}
                 
                 </h3>
+                <ArticleCard/>
 
-              <p> Read More </p>
                 <br></br>
                 </li>
             
@@ -42,6 +43,7 @@ return (
             );
         })}
     </ul>
+   
     </div>
     </div>
    
