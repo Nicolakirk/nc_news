@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
-import { fetchArticles } from "./api";
+import { fetchArticles } from "../utils/api";
+import ArticleCard from "./ArticleCard";
 
-const ArticlesList =(articlesList, setArticlesList)=>{
+const ArticlesList =({articlesList, setArticlesList})=>{
 
     const [isLoading, setIsloading] = useState(true);
 
@@ -19,23 +20,21 @@ const ArticlesList =(articlesList, setArticlesList)=>{
       }
 return (
     <div>
-    <h2 className="articleHeader">Here are all the articles..</h2>
-    <ul>
+    <h2 className="articleHeader">Here Are All The Articles</h2>
+    <div >
+    
+    <ul className="listboxes" >
         {articlesList.map((article) =>{
-            return (
-                <li key = {article.article_id}> <img src={article.article_img_url}>
-                </img>
-                <section>
-                    {article.article_title}{article.article_id}
-
-                </section>
-                </li>
-            
-            
+            return ( <ArticleCard article={article} articlesList={articlesList} setArticlesList={setArticlesList}/>
+               
+           
+        
                
             );
         })}
     </ul>
+   
+    </div>
     </div>
    
 );

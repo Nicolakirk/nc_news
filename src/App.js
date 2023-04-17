@@ -15,7 +15,7 @@ function App() {
       <Header/>
       <Routes>
         <Route path ="/" element = { <ArticlesList articlesList={articlesList} setArticlesList={setArticlesList}/> } />
-        <Route path ="/articles" element = { <ArticlesList/>} />
+        <Route path ="/articles" element = { <ArticlesList articlesList={articlesList} setArticlesList={setArticlesList}/>} />
       </Routes>
     </div>
   );
