@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { fetchArticles } from "./api";
+import { fetchArticles } from "../utils/api";
 
 const ArticlesList =({articlesList, setArticlesList})=>{
 
@@ -28,20 +28,12 @@ return (
                 width={300}
                 height={250}>
                 </img>
-               
-                <h4 > {article.title} by {article.author}
+               <h4>{article.topic}</h4>
+                <h3 > {article.title} by {article.author}
                 
-                </h4>
-                <p> Article id :{article.article_id}</p>
-               <p>
-                {article.body}
-                </p>
-               
-                
-                <p>
-                Article Votes = {article.votes}
-                </p>
-              
+                </h3>
+
+              <p> Read More </p>
                 <br></br>
                 </li>
             
