@@ -5,6 +5,7 @@ import Header from './components/header';
 import { Routes, Route } from 'react-router-dom';
 import React from 'react';
 import { useState } from "react";
+import SingleCardView from './components/SingleCardView';
 
 
 function App() {
@@ -16,7 +17,8 @@ function App() {
       <Routes>
         <Route path ="/" element = { <ArticlesList articlesList={articlesList} setArticlesList={setArticlesList}/> } />
         <Route path ="/articles" element = { <ArticlesList articlesList={articlesList} setArticlesList={setArticlesList}/>} />
-      </Routes>
+        <Route path='/articles/:article_id' element={<SingleCardView articlesList={articlesList} setArticlesList={setArticlesList}/>} />
+        </Routes>
     </div>
   );
 }
