@@ -1,6 +1,11 @@
+import { Link } from "react-router-dom"
+import logo from '../utils/logo.png'
 const Header =()=>{
     return(
-    <h1> N C News</h1>
+        <Link to={`/articles`}> 
+        <img src ={logo}  alt="logo"></img> </Link>
+
+    
     )
 }
 export default Header;
