@@ -1,9 +1,9 @@
 import { Link } from "react-router-dom"
-import logo from '../utils/logo.png'
+
 const Header =()=>{
     return(
         <Link to={`/articles`}> 
-        <img src ={logo}  alt="logo"></img> </Link>
+       <h1>NC News</h1></Link>
 
     
     )
