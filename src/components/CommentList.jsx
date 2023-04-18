@@ -21,6 +21,11 @@ const CommentList=()=> {
        
 
       }, []);
+      if(isLoading ){
+        return (
+          <p>Is loading ....</p>
+        )
+      }
     
     return (
       <div>
