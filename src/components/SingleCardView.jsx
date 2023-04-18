@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchArticlesById } from "../utils/api";
-import heart from  "../utils/heart.png"
-import message from "../utils/message.png"
+import { Link } from "react-router-dom";
+import CommentList from "./CommentList";
 
 const SingleCardView=({article, articlesList,setArticlesList})=>{
     const [isLoading, setIsLoading] = useState(true);
     const params = useParams();
     const articleId = params.article_id;
-    console.log(article);
-    console.log(articlesList);
+    
    
     useEffect(() => {
         setIsLoading(true);
@@ -36,9 +35,9 @@ const SingleCardView=({article, articlesList,setArticlesList})=>{
 <p> {articlesList.body} </p>
 <h4> votes =      
 {articlesList.votes}  </h4>
-
+<Link to={`/articles/${articlesList.article_id}/comments`}>
 <h4> Comments =  {articlesList.comment_count} </h4>
-
+</Link>
 
 
    

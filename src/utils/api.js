@@ -20,3 +20,10 @@ export const fetchArticles =  ()=>{
             return response.data.article
         })
     }
+
+    export const fetchCommentsbyArticleId = (articleId)=> {
+        return newsApi.get(`/articles/${articleId}/comments`).then ((response) =>{
+           
+            return response.data.comments
+        })
+    }

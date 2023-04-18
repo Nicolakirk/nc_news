@@ -7,6 +7,8 @@ import React from 'react';
 import { useState } from "react";
 import SingleCardView from './components/SingleCardView';
 
+import CommentList from './components/CommentList';
+
 
 function App() {
 
@@ -18,6 +20,7 @@ function App() {
         <Route path ="/" element = { <ArticlesList articlesList={articlesList} setArticlesList={setArticlesList}/> } />
         <Route path ="/articles" element = { <ArticlesList articlesList={articlesList} setArticlesList={setArticlesList}/>} />
         <Route path='/articles/:article_id' element={<SingleCardView articlesList={articlesList} setArticlesList={setArticlesList}/>} />
+        <Route path ="/articles/:article_id/comments"element={<CommentList articlesList={articlesList} setArticlesList={setArticlesList}/>} />
         </Routes>
     </div>
   );

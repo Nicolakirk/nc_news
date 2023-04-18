@@ -28,7 +28,7 @@ return (
             return ( <ArticleCard article={article} articlesList={articlesList} setArticlesList={setArticlesList}/>
                
            
-        gi
+     
                
             );
         })}
