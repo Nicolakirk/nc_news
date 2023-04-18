@@ -54,4 +54,17 @@
  color: rgb(19, 93, 51);
 }
 
+.commentcard {
+  width: 300px;
+  padding: 2rem;
+  margin: 1rem;
+
+}
+.commentsboxes {
+  display:flex;
+  flex-direction:row ;
+  flex-wrap: wrap;
+  justify-content: left;
+}
+
 
