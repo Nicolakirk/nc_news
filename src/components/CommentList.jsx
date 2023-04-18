@@ -6,26 +6,34 @@ import CommentCard from "./CommentCard";
 const CommentList=()=> {
     const[isLoading, setIsLoading] =useState(true);
     const[commentsList, setCommentsList]= useState([]);
+   
     const params = useParams();
     const articleId = params.article_id;
 
     useEffect(() => {
         setIsLoading(true);
+       
         fetchCommentsbyArticleId(articleId).then((comments) => {
           setCommentsList(comments);
-          console.log(comments);
+          
         setIsLoading(false);
-        });
+        })
+       
+
       }, []);
     
     return (
       <div>
+        
         <h2>  Here are all the comments about article {articleId}</h2>
         <ul className="commentsboxes">
             {commentsList.map((comment)=> {
+              if (!comment) <p> Sorry there are no comments. </p>
+              else {
                 return ( 
-                  <CommentCard comment={comment}/>
-                )
+                 <CommentCard comment={comment}/>
+                ) 
+              }
             })}
         </ul>
       </div>
