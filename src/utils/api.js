@@ -27,3 +27,10 @@ export const fetchArticles =  ()=>{
             return response.data.comments
         })
     }
+
+    export const patchArticle =(articleId) =>{
+        return newsApi.patch(`/articles/${articleId}`, { inc_votes: 1 })
+        
+        
+        };
+    
