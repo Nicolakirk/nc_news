@@ -36,7 +36,7 @@ const CommentList=()=> {
               if (!comment) <p> Sorry there are no comments. </p>
               else {
                 return ( 
-                 <CommentCard comment={comment}/>
+                 <CommentCard key = {comment.comment_id}    comment={comment}/>
                 ) 
               }
             })}
