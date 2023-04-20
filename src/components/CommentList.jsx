@@ -13,7 +13,7 @@ const CommentList=()=> {
     const articleId = params.article_id;
 
 
-    console.log(commentsList[0]);
+   
 
     useEffect(() => {
         setIsLoading(true);
@@ -32,9 +32,7 @@ const CommentList=()=> {
           <p>Is loading ....</p>
         )
       }
-  
-console.log(commentsList);
-console.log(commentsList[1])
+
       
      
 

@@ -10,7 +10,7 @@ const params =useParams();
 const articleId = params.article_id;
 
 const[userName, setUserName]=useState('tickle122')
-
+const[submitting, setSubmitting]= useState(false);
 const[body, setBody]=useState("")
 const [err, setErr] =useState(null);
 
@@ -20,31 +20,32 @@ const[message, setMessage]= useState("");
 
 const handleSubmit =(event)=>{
     event.preventDefault();
-   
-    setUserName("tickle122");
+  
 
-    const inputComment = {
-    
-    username: userName,
-         body: body,
-         votes:0,
+            const inputComment = {
+            
+            username: userName,
+                body: body,
+                votes:0,
                     };
-                console.log(inputComment);
+              
                   setCommentsList((currentComments)=> {
                     return ([inputComment, ...currentComments])})
                     setMessage("We have updated your comment");
                      setErr(null)
- postComments(articleId, inputComment).catch((err) => {
-    if(body === ""){
+                     setSubmitting(true);
+        postComments(articleId, inputComment).catch((err) => {
+        if(body === ""){
         setMessage("Please enter a comment")}
         else{
             setCommentsList((currentComments) => { 
-       (currentComments.shift()); })
+          (currentComments.shift()); })
             setErr("Something went wrong!, please try again!");
                                 ;
-        }
- })
- setBody("")
+                      }
+              })
+              setBody("")
+              setSubmitting(false);
                    
                
                 };
@@ -54,15 +55,15 @@ return (
             
             onSubmit={handleSubmit}> 
             <h3 className="grid_item1" >Post a New Comment Here</h3>
-           
-
-    
-<input className="grid_item2"
-type="text"
-value={body}
-maxLength="1000"
-onChange={(event)=> setBody(event.target.value)}
-/>
+          
+              <input className="grid_item2"
+              type="text"
+              value={body}
+              maxLength="1000"
+              required
+              disabled={submitting}
+              onChange={(event)=> setBody(event.target.value)}
+              />
 
 
  <div className="grid_item3">
