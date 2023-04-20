@@ -1,7 +1,8 @@
 
 const CommentCard = ({comment}) =>{
-
+ 
 return (
+
   <li  key = {comment.comment_id} className="commentcard" >
 
     <h4>Created by {comment.author}</h4>

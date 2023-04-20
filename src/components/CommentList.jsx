@@ -13,7 +13,7 @@ const CommentList=()=> {
     const articleId = params.article_id;
 
 
-    console.log(commentsList);
+    console.log(commentsList[0]);
 
     useEffect(() => {
         setIsLoading(true);
@@ -33,7 +33,8 @@ const CommentList=()=> {
         )
       }
   
-
+console.log(commentsList);
+console.log(commentsList[1])
       
      
 
@@ -49,9 +50,9 @@ const CommentList=()=> {
         <ul>
        { commentsList.length === 0? <p>Sorry, there are no comments</p>: 
             commentsList.map((comment)=> {
-            
+       
                 return ( 
-                 <CommentCard key = {comment.comment_id}    comment={comment}/>
+                 <CommentCard   key = {comment.comment_id} comment={comment}/>
                 ) 
               
             })}
