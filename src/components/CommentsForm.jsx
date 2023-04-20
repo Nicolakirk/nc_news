@@ -39,7 +39,9 @@ const handleSubmit =(event)=>{
         setMessage("Please enter a comment")}
         else{
             setCommentsList((currentComments) => { 
-          (currentComments.shift()) })
+          return  [...currentComments]}).then((copyArray)=>{
+copyArray.shift();
+          })
             setErr("Something went wrong!, please try again!");
                                 ;
                       }
