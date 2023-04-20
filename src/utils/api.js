@@ -6,12 +6,9 @@ const newsApi = axios.create({
 })
 
 
-export const fetchArticles =  ()=>{
-    return newsApi.get('/articles').then((response)=> {
-      
-    return response.data.articles
-    
-    })
+export const fetchArticles =  async ()=>{
+    const response = await newsApi.get('/articles');
+    return response.data.articles;
     }
 
     export const fetchArticlesById = (articleId) => {
@@ -32,5 +29,14 @@ export const fetchArticles =  ()=>{
         return newsApi.patch(`/articles/${articleId}`, { inc_votes: 1 })
         
         
+        };
+
+        export const postComments = (articleId, inputComment) => {
+           
+            return newsApi.post(`/articles/${articleId}/comments`, inputComment)
+                .then((response) => {
+                
+                    return response.data.comments;
+                });
         };
     

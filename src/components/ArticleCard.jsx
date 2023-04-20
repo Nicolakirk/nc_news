@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom"
 import SingleCardView from "./SingleCardView";
 
-const ArticleCard =({article, articleList, setArticlesList})=>{
+const ArticleCard =({article, articlesList, setArticlesList})=>{
   
    
 
@@ -19,7 +19,7 @@ const ArticleCard =({article, articleList, setArticlesList})=>{
    
     <br></br>
   
-    <SingleCardView article = {article} articlesList={articleList} setArticlesList={setArticlesList}/>
+  
     </h3> 
    
    
