@@ -58,8 +58,8 @@ return (
             onSubmit={handleSubmit}> 
             <h3 className="grid_item1" >Post a New Comment Here</h3>
           
-              <input className="grid_item2"
-              type="text"
+              <textarea className="grid_item2"
+           
               value={body}
               maxLength="1000"
               required
