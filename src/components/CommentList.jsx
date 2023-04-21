@@ -1,7 +1,9 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
-import { fetchCommentsbyArticleId } from "../utils/api";
+import { fetchCommentsbyArticleId  } from "../utils/api";
 import CommentCard from "./CommentCard";
+
+import CommentsForm from "./CommentsForm";
 
 const CommentList=()=> {
     const[isLoading, setIsLoading] =useState(true);
@@ -9,6 +11,9 @@ const CommentList=()=> {
    
     const params = useParams();
     const articleId = params.article_id;
+
+
+   
 
     useEffect(() => {
         setIsLoading(true);
@@ -20,25 +25,34 @@ const CommentList=()=> {
         })
        
 
-      }, []);
+      }, [articleId]);
+    
       if(isLoading ){
         return (
           <p>Is loading ....</p>
         )
       }
+
+      
+     
+
+     
     
     return (
       <div>
-        
+        <CommentsForm   articleId={articleId} setCommentsList={setCommentsList} commentsList={commentsList}/> 
+
+     
         <h2>  Here are all the comments about article {articleId}</h2>
-        <ul className="commentsboxes">
-            {commentsList.map((comment)=> {
-              if (!comment) <p> Sorry there are no comments. </p>
-              else {
+       
+        <ul>
+       { commentsList.length === 0? <p>Sorry, there are no comments</p>: 
+            commentsList.map((comment)=> {
+       
                 return ( 
-                 <CommentCard key = {comment.comment_id}    comment={comment}/>
+                 <CommentCard   key = {comment.comment_id} comment={comment}/>
                 ) 
-              }
+              
             })}
         </ul>
       </div>

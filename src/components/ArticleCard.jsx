@@ -1,11 +1,11 @@
 import { Link } from "react-router-dom"
 import SingleCardView from "./SingleCardView";
 
-const ArticleCard =({article, articleList, setArticlesList})=>{
-  
+      const ArticleCard =({article, articlesList, setArticlesList})=>{
+      
    
 
-   return (
+      return (
       <Link to={`/articles/${article.article_id}`} >
     <li  className="articlecard" key = {article.article_id}> <img src={article.article_img_url}  alt={article.article_title}
     width={300}
@@ -19,7 +19,7 @@ const ArticleCard =({article, articleList, setArticlesList})=>{
    
     <br></br>
   
-    <SingleCardView article = {article} articlesList={articleList} setArticlesList={setArticlesList}/>
+  
     </h3> 
    
    

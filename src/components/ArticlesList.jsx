@@ -9,7 +9,7 @@ const ArticlesList =({articlesList, setArticlesList})=>{
     useEffect(() => {
         setIsloading(true);
         fetchArticles().then((articles) => {
-            console.log(articles);
+           
           setArticlesList(articles);
           setIsloading(false);
         });
