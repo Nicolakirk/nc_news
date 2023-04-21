@@ -40,3 +40,17 @@ return response.data.articles;
                 });
         };
     
+        export const fetchTopics = () => {
+            return  newsApi.get(`/topics`).then(({data})=>{
+               
+                return data.topics
+            })
+        }
+
+        export const fetchTopicArticles = (topic) => {
+            return newsApi.get(`/articles/?topic=${topic}`).then((response) =>{
+          
+             
+                return response.data.articles;
+            })
+        }
