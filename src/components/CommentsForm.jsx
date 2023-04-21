@@ -29,7 +29,7 @@ const handleSubmit =(event)=>{
                 votes:0,
                     };
               
-                  setCommentsList((currentComments)=> {
+           setCommentsList((currentComments)=> {
                     return ([inputComment, ...currentComments])})
                     setMessage("We have updated your comment");
                      setErr(null)
@@ -40,7 +40,7 @@ const handleSubmit =(event)=>{
         else{
             setCommentsList((currentComments) => { 
           return  [...currentComments]}).then((copyArray)=>{
-copyArray.shift();
+          copyArray.shift();
           })
             setErr("Something went wrong!, please try again!");
                                 ;

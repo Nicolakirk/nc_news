@@ -29,7 +29,6 @@ const SingleCardView=({  })=>{
    
 
   
-    console.log(articleId);
   
  
     useEffect(() => {
@@ -46,29 +45,29 @@ const SingleCardView=({  })=>{
     
     
    return (
-<div>
-<ul>
-<h2>{singleCard.title} </h2>
-<h2>{singleCard.author}</h2>
-<img src={singleCard.article_img_url}  alt={singleCard.title}
-    width={400}
-    height={350}>
-    </img>
-<p> {singleCard.body} </p>
+    <div>
+      <ul>
+      <h2>{singleCard.title} </h2>
+      <h2>{singleCard.author}</h2>
+      <img src={singleCard.article_img_url}  alt={singleCard.title}
+          width={400}
+          height={350}>
+          </img>
+        <p> {singleCard.body} </p>
 
-<h3>  {singleCard.title} has { singleCard.votes + addVote } votes
+        <h3>  {singleCard.title} has { singleCard.votes + addVote } votes
 
- </h3>
-{err ? <p>{err}</p> :null}
-    <button  className="votebutton" onClick={HandleClick}>Vote for this article</button>
-  
-</ul>
-<div>
-  
-</div>
+        </h3>
+        {err ? <p>{err}</p> :null}
+            <button  className="votebutton" onClick={HandleClick}>Vote for this article</button>
+          
+        </ul>
+        <div>
+          
+        </div>
 
-<CommentList/>
-</div>
+        <CommentList/>
+    </div>
 
     )
 

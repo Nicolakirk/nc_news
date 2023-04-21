@@ -8,20 +8,20 @@ const newsApi = axios.create({
 
 export const fetchArticles =  async ()=>{
     const response = await newsApi.get('/articles');
-    return response.data.articles;
+return response.data.articles;
     }
 
     export const fetchArticlesById = (articleId) => {
-        return newsApi.get(`/articles/${articleId}`).then((response) =>{
+    return newsApi.get(`/articles/${articleId}`).then((response) =>{
              
-            return response.data.article
+   return response.data.article
         })
     }
 
     export const fetchCommentsbyArticleId = (articleId)=> {
         return newsApi.get(`/articles/${articleId}/comments`).then ((response) =>{
            
-            return response.data.comments
+         return response.data.comments
         })
     }
 
@@ -33,10 +33,10 @@ export const fetchArticles =  async ()=>{
 
         export const postComments = (articleId, inputComment) => {
            
-            return newsApi.post(`/articles/${articleId}/comments`, inputComment)
-                .then((response) => {
+        return newsApi.post(`/articles/${articleId}/comments`, inputComment)
+           .then((response) => {
                 
-                    return response.data.comments;
+         return response.data.comments;
                 });
         };
     
