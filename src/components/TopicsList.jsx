@@ -2,6 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchTopicArticles } from "../utils/api";
 import ArticleCard from "./ArticleCard";
+import SortButtons from "./SortButtons";
+import OrderButtons from "./OrderButtons";
 
 
 
@@ -9,7 +11,7 @@ const TopicsList =({setArticlesList, articlesList})=>{
     const [isLoading, setIsLoading]= useState(true);
 
     const params = useParams();
-    console.log(params.topic)
+    
     const topic= params.topic;
     const [articlesListbyTopic, setArticlesListByTopic]=useState([]);
 
@@ -26,6 +28,10 @@ const TopicsList =({setArticlesList, articlesList})=>{
     }
         return(
             <div>
+                <SortButtons articlesList={articlesList}
+            setArticlesList={setArticlesList}/>
+            <OrderButtons articlesList={articlesList}
+            setArticlesList={setArticlesList}/>
                 <h2 className="topiclistheader"> Here are the articles about {topic}</h2>
             <ul className="topiclist"
             >

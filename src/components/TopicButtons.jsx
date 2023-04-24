@@ -23,12 +23,12 @@ import { fetchTopics } from "../utils/api"
 
         return (
         <nav>
-            <ul>{topicsListView.map((topic)=> <li key={topic.slug} >
+            <p>{topicsListView.map((topic)=> <button key={topic.slug} >
             <Link to={`/articles/topics/${topic.slug}`}>{topic.slug} </Link>
           
-            </li>)}
+            </button>)}
 
-            </ul>
+            </p>
         </nav>)
 
     }

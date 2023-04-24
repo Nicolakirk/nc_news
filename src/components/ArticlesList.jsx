@@ -3,6 +3,9 @@ import { fetchArticles } from "../utils/api";
 import ArticleCard from "./ArticleCard";
 import TopicButtons from "./TopicButtons";
 
+import OrderButtons from "./OrderButtons";
+import SortButtons from "./SortButtons";
+
 const ArticlesList =({articlesList, setArticlesList, topicsListView, setTopicsListView})=>{
 
     const [isLoading, setIsloading] = useState(true);
@@ -22,9 +25,16 @@ return (
     <div>
     <h2 className="articleHeader">Here Are All The Articles</h2>
     <div >
-   <TopicButtons topicsListView={topicsListView} setTopicsListView={setTopicsListView}/>
-    <ul className="listboxes" >
-        {articlesList.map((article) =>{
+    <OrderButtons articlesList={articlesList}
+            setArticlesList={setArticlesList}/>
+
+<SortButtons articlesList={articlesList}setArticlesList={setArticlesList}/>
+            <TopicButtons topicsListView={topicsListView} setTopicsListView={setTopicsListView}/>
+            
+
+
+           <p className="listboxes" >
+            {articlesList.map((article) =>{
             return ( <ArticleCard article={article} articlesList={articlesList} setArticlesList={setArticlesList}/>
                
            
@@ -32,7 +42,7 @@ return (
                
             );
         })}
-    </ul>
+    </p>
    
     </div>
     </div>

@@ -1,5 +1,6 @@
 import axios from "axios";
 
+
 const newsApi = axios.create({ 
     baseURL : 'https://nc-news-h4q7.onrender.com/api'
     
@@ -54,3 +55,25 @@ return response.data.articles;
                 return response.data.articles;
             })
         }
+
+        export const orderArticles=(order) =>{
+            return newsApi.get(`/articles/?order=${order}`).then((response)=>{
+                return response.data.articles
+            })
+        }
+
+
+        export const sortArticles=( sort_by)=>{
+            console.log(sort_by)
+        return newsApi.get(`/articles/?sort_by=${sort_by}`).then((response)=>{
+            console.log(response.data.articles)
+           return response.data.articles
+            })
+        }
+
+        export const getArticles= (sort_by, order)=>{
+            return newsApi.get(`/articles/`,{params:{ q:sort_by, order}}).then(({data})=> {
+                return data.items
+            })
+        };
+        
