@@ -11,11 +11,16 @@ const SortList=({setArticlesList, articlesList})=>{
 
     const params = useParams();
     const sort_by = params.sort_by;
+    const [sortList, setSortList]=useState([])
+    const[order, setOrder]=useState("")
+  
 
     useEffect(()=>{
         setIsLoading(true);
-        sortArticles(sort_by).then((articles)=>{
-            setArticlesList(articles);
+      
+        sortArticles(sort_by)
+        .then((newArticles)=>{
+            setSortList(newArticles);
             setIsLoading(false);
         })
 
@@ -27,27 +32,21 @@ const SortList=({setArticlesList, articlesList})=>{
     return(
         <div>
 
-<h2 className="topiclistheader"> Here are the articles sorted by {sort_by}</h2>
+
+<h2 className="topiclistheader"> Here are the articles sorted by {sort_by} </h2>
+
+
             <ul className="sortlist"
             >
-             {articlesList.map((article)=>{
+             {sortList.map((article)=>{
              return (  <ArticleCard article={article} articlesList={articlesList} setArticlesList={setArticlesList}/>
            
 
              )
              })}
-                
-                
+                 
                 
                 </ul>
-
-
-
-
-
-
-
-
 
 
  </div>

@@ -65,15 +65,19 @@ return response.data.articles;
 
         export const sortArticles=( sort_by)=>{
             console.log(sort_by)
+          
+          
         return newsApi.get(`/articles/?sort_by=${sort_by}`).then((response)=>{
-            console.log(response.data.articles)
+            
            return response.data.articles
             })
         }
 
-        export const getArticles= (sort_by, order)=>{
-            return newsApi.get(`/articles/`,{params:{ q:sort_by, order}}).then(({data})=> {
-                return data.items
+        export const getArticles= (sort_by="created_at", order)=>{
+         
+            return newsApi.get(`/articles/?sort_by=${sort_by}&&order_by=${order}`).then(({data})=> {
+                console.log(data.articles)
+                return data.articles
             })
         };
         

@@ -40,16 +40,18 @@ import { Link } from "react-router-dom"
 
     return ( 
         <div>
-            <p> <button>
+            <nav>
+            <button>
 <Link to ={`/articles/sort/${"comment_count"}`}> comment count</Link> 
     </button>
-    </p> <button>
+    <button>
 <Link to ={`/articles/sort/${"votes"}`}> votes</Link>
    </button>
-    <p> <button>
+     <button>
 <Link to ={`/articles/sort/${"created_at"}`}> created_at</Link> 
     </button>
-</p>
+
+</nav>
  </div>
 
 
