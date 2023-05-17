@@ -80,4 +80,11 @@ return response.data.articles;
                 return data.articles
             })
         };
+
+        export const deleteComment=(comment_id)=>{ console.log(comment_id);
+            return newsApi.delete(`/comments/${comment_id}`).then((response)=>{
+            return response.data.articles
+        })
+
+        }
         

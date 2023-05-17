@@ -36,9 +36,7 @@ return (
            <p className="listboxes" >
             {articlesList.map((article) =>{
             return ( <ArticleCard article={article} articlesList={articlesList} setArticlesList={setArticlesList}/>
-               
-           
-     
+          
                
             );
         })}
