@@ -23,12 +23,13 @@ const ArticlesList =({articlesList, setArticlesList, topicsListView, setTopicsLi
       }
 return (
     <div>
-    <h2 className="articleHeader">Here Are All The Articles</h2>
+    <h2 className="Article-title">Here Are All The Articles</h2>
     <div >
-    <OrderButtons articlesList={articlesList}
-            setArticlesList={setArticlesList}/>
+    {/* <OrderButtons articlesList={articlesList}
+            setArticlesList={setArticlesList}/> */}
 
 <SortButtons articlesList={articlesList}setArticlesList={setArticlesList}/>
+
             <TopicButtons topicsListView={topicsListView} setTopicsListView={setTopicsListView}/>
             
 

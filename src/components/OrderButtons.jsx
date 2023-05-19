@@ -9,7 +9,7 @@ import { getArticles, orderArticles, sortArticles } from "../utils/api"
 import ArticleCard from "./ArticleCard";
  
 
-const OrderButtons =({setArticlesList,articlesList})=>{
+const OrderButtons =({setSortList, sortList})=>{
     const[sort, setSort]= useState("")
     const[order, setOrder]=useState("")
     const[isLoading, setisLoading]=useState(true)
@@ -17,12 +17,13 @@ const OrderButtons =({setArticlesList,articlesList})=>{
 
     const params = useParams();
     const sort_by = params.sort_by;
+    
     useEffect(()=>{
        setisLoading(true);
 
-    orderArticles(order)
+    getArticles(sort_by, order)
     .then((newarticles)=>{
-        setArticlesList(newarticles);
+        setSortList(newarticles);
        })
         .catch((err)=>{
             console.log(err);
@@ -36,16 +37,14 @@ const OrderButtons =({setArticlesList,articlesList})=>{
 
     return (
         <div>
- <button onClick={()=> setOrder("desc")} >Sort By Date Desc</button>
- <button onClick={()=> setOrder("asc")} >Sort By Date Asc</button>
- 
-                
-                
-                
-              
+            <nav className="orderbuttons">
+ <button onClick={()=> setOrder("desc")}className="orderbutton1" >Sort By Desc</button>
+ <button onClick={()=> setOrder("asc")} className="orderbutton2" >Sort By Asc</button>
+ </nav>
+         
  </div>
  
- 
+
 
 
    )

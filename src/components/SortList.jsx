@@ -4,6 +4,7 @@ import ArticleCard from "./ArticleCard";
 import { sortArticles } from "../utils/api";
 
 import { Link } from "react-router-dom"
+import OrderButtons from "./OrderButtons";
 
 
 const SortList=({setArticlesList, articlesList})=>{
@@ -33,10 +34,10 @@ const SortList=({setArticlesList, articlesList})=>{
         <div>
 
 
-<h2 className="topiclistheader"> Here are the articles sorted by {sort_by} </h2>
+<h2 className="sortlistheader"> Here are the articles sorted by {sort_by} </h2>
 
-
-            <ul className="sortlist"
+<OrderButtons sortList={sortList} setSortList={setSortList}/>
+            <p className="sortlist"
             >
              {sortList.map((article)=>{
              return (  <ArticleCard article={article} articlesList={articlesList} setArticlesList={setArticlesList}/>
@@ -46,7 +47,7 @@ const SortList=({setArticlesList, articlesList})=>{
              })}
                  
                 
-                </ul>
+                </p>
 
 
  </div>

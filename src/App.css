@@ -1,13 +1,17 @@
-.App {
+
+.App{
   text-align: center;
-  box-sizing: border-box;
-  margin: 10;
-  padding: 10;
+  font-size: large;
+  margin: 5%;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+a:any-link{
+  color: black;
+  text-decoration: none;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -40,42 +44,128 @@
     transform: rotate(360deg);
   }
 }
+.Article-title{
+  text-decoration: none;
+  color:black;
+}
+
+.Sortbuttons{
+ 
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content:center;
+  column-gap: 20px;
+
+}
+.button1{
+  background-color:white;
+  text-decoration: none;
+  font-size: large;
+  border-radius: 2px;
+  border : 1px solid black;
+
+  padding: 1%;
+}
+.button2{
+  background-color:white;
+  text-decoration: none;
+  font-size: large;
+  border-radius: 2px;
+  border : 1px solid black;
+ 
+  padding: 1%;
+}
+.button3{
+  background-color:white;
+  text-decoration: none;
+  font-size: large;
+  border-radius: 2px;
+  border : 1px solid black;
+
+  padding: 1%;
+}
+.topicbuttons{
+  display: flex;
+  flex-direction:row;
+justify-content: center;
+gap: 10px;
+
+
+
+ 
+ }
+.individualtopicbuttons{
+  background-color:white;
+  text-decoration: none;
+  font-size: large;
+padding: 1%;
+  border-radius: 2px;
+  border : 1px solid black;
+
+ 
+}
+.listboxes{
+ display: flex;
+ flex-wrap: wrap;
+ flex-direction: row;
+ align-items:flex-start;
+ justify-content: space-around;
+
+}
 .articlecard{
   width: 300px;
   padding: 2rem;
   margin: 1rem;
 }
-.listboxes{
-  display:flex;
-  flex-direction:row ;
-  flex-wrap: wrap;
-  justify-content: left;
+.orderbuttons{
+  display: flex;
+  flex-direction: row;
+flex-wrap: wrap;
 
-}
-
-.listboxes h4{
- color: rgb(19, 93, 51);
-}
-
-
-
-
-.commentsboxes {
-width:90%;
-margin-inline: auto;
-max-width:1100px;
-display:grid;
-grid-template-columns:repeat(auto-fit minmax (200px, 1fr))
-;
+justify-content: center;
 gap:10px;
-padding: 5%;
+}
+.orderbutton1{
+  background-color:white;
+  text-decoration: none;
+  font-size: large;
+  border-radius: 2px;
+  border : 1px solid black;
+}
+.orderbutton2{
+  background-color:white;
+  text-decoration: none;
+  font-size: large;
+  border-radius: 2px;
+  border : 1px solid black;
+}
+.sortlist{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  align-items: center;
+ justify-content: center;
+}
+
+.singlecardview{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+.topicboxes{
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+ 
+}
 
 
-  
-}
-.commentcard{
-  border : 2px solid darkgreen;
-}
+
+
 
 
 .votebutton{
@@ -122,13 +212,50 @@ padding: 5%;
   vertical-align: bottom;
 
 }
-
-.topiclist{
+/* .commentsboxes {
+  width:70%;
+  margin-inline: auto;
+  max-width:1100px;
   display:flex;
-  flex-direction:row ;
-  flex-wrap: wrap;
-  justify-content: left;
-}
+  grid-template-columns:repeat(auto-fit minmax (200px, 1fr))
+  ;
+  gap:10px;
+  padding: 5%; */
+
+  .commentlist{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content:center;
+    gap:10px;
+  }
+  
+    
+ 
+  .individualcommentcard{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+padding: 10px;
+margin: 15px;
+    border : 1px solid darkgreen;
+    border-radius: 10px;
+  }
+  .Deletebutton{
+    background-color:white;
+    color: darkgreen;
+    border-radius: 10px;
+    border : 1px solid darkgreen;
+    font-size: large;
+    vertical-align: botto;
+  }
+
+
   
 
-
+.Articleheader{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}

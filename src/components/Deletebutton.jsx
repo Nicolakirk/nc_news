@@ -24,7 +24,7 @@ setErr("oops! something went wrong, please try agin")
     )}
     return (
         <div>
-           <button className="deletebutton" onClick={handleClick}>  Delete</button>   
+           <button className="Deletebutton" onClick={handleClick}>  Delete</button>   
            {err ? <h4>{err}</h4> : null}
         </div>
     )

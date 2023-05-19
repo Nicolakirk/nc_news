@@ -45,16 +45,13 @@ const CommentList=()=> {
      
         <h2>  Here are all the comments about article {articleId}</h2>
        
-        <ul>
-       { commentsList.length === 0? <p>Sorry, there are no comments</p>: 
-            commentsList.map((comment)=> {
-       
-                return ( 
+   <p className="commentList">
+       { commentsList.length === 0? <p>Sorry, there are no comments</p> : commentsList.map((comment)=> {  return ( 
                  <CommentCard   key = {comment.comment_id} comment={comment} setCommentsList={setCommentsList} />
                 ) 
               
             })}
-        </ul>
+       </p>
       </div>
     )
 

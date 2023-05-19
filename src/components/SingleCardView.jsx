@@ -46,7 +46,7 @@ const SingleCardView=({  })=>{
     
    return (
     <div>
-      <ul>
+      <ul className="Singlecardview">
       <h2>{singleCard.title} </h2>
       <h2>{singleCard.author}</h2>
       <img src={singleCard.article_img_url}  alt={singleCard.title}
@@ -55,9 +55,9 @@ const SingleCardView=({  })=>{
           </img>
         <p> {singleCard.body} </p>
 
-        <h3>  {singleCard.title} has { singleCard.votes + addVote } votes
+        <p>  {singleCard.title} has { singleCard.votes + addVote } votes
 
-        </h3>
+        </p>
         {err ? <p>{err}</p> :null}
             <button  className="votebutton" onClick={HandleClick}>Vote for this article</button>
           

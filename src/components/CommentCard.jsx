@@ -10,15 +10,15 @@ const CommentCard = ({comment, setCommentsList}) =>{
 
 return (
 
-  <li  key = {comment.comment_id}         className="commentcard" >
+  <div  className="individualcommentcard" key = {comment.comment_id}   >
 
-    <h4>Created by {comment.author}</h4>
+    <h3>Created by {comment.author}</h3>
     <p>{comment.body}</p>
-  
-    <p>votes = {comment.votes}</p>
-  <Deletebutton comment={comment} setCommentsList={setCommentsList} />
-    <p></p>
-  </li>
+  {/* <p>votes = {comment.votes}</p> */}
+  <Deletebutton comment={comment} setCommentsList={setCommentsList} /> 
+   
+  </div>
+   
 )
 
 }

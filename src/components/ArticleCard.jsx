@@ -3,7 +3,7 @@ import SingleCardView from "./SingleCardView";
 
       const ArticleCard =({article, articlesList, setArticlesList})=>{
       
-   
+   console.log(article)
 
       return (
       <Link to={`/articles/${article.article_id}`} >
@@ -15,14 +15,15 @@ import SingleCardView from "./SingleCardView";
    
    <h4>{article.topic}</h4>
   
-    <h3 > {article.title} by {article.author}
+    <h3 > {article.title} by {article.author} </h3> 
    <p>Votes ={article.votes}
    </p>
-   <p>comment count = {article.comment_count}</p>
-    <br></br>
+   {article.comment_count ?<p>comment count = {article.comment_count}</p>:null}
+   
+
   
   
-    </h3> 
+   
    
    
     </p>

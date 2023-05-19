@@ -28,12 +28,10 @@ const TopicsList =({setArticlesList, articlesList})=>{
     }
         return(
             <div>
-                <SortButtons articlesList={articlesList}
-            setArticlesList={setArticlesList}/>
-            <OrderButtons articlesList={articlesList}
-            setArticlesList={setArticlesList}/>
-                <h2 className="topiclistheader"> Here are the articles about {topic}</h2>
-            <ul className="topiclist"
+                
+          
+                <h4 className="topiclistheader"> Here are the articles about {topic}</h4>
+            <p className="topicboxes"
             >
              {articlesList.map((article)=>{
              return (  <ArticleCard article={article} articlesList={articlesList} setArticlesList={setArticlesList}/>
@@ -44,7 +42,7 @@ const TopicsList =({setArticlesList, articlesList})=>{
                 
                 
                 
-                </ul>
+                </p>
                 
             </div>
         
