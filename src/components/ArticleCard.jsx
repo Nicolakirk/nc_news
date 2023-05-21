@@ -7,26 +7,23 @@ import SingleCardView from "./SingleCardView";
 
       return (
       <Link to={`/articles/${article.article_id}`} >
-    <p  className="articlecard" key = {article.article_id}> <img src={article.article_img_url}  alt={article.article_title}
+    <section  className="articlecard" key = {article.article_id}> 
+   
+   
+   <h4 > Posted by {article.author} </h4> 
+   <h5> {article.title}</h5>
+   <img src={article.article_img_url}  alt={article.article_title}
     width={300}
     height={250}>
 
     </img>
-   
-   <h4>{article.topic}</h4>
-  
-    <h3 > {article.title} by {article.author} </h3> 
-   <p>Votes ={article.votes}
+   <section>
+   <p>{article.votes} Votes
    </p>
-   {article.comment_count ?<p>comment count = {article.comment_count}</p>:null}
+   {article.comment_count ?<p> 💬 {article.comment_count} Comments</p>:null}
+   </section>
+    </section>
    
-
-  
-  
-   
-   
-   
-    </p>
     </Link> 
    );
 

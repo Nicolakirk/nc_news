@@ -36,14 +36,18 @@ const OrderButtons =({setSortList, sortList})=>{
 
 
     return (
-        <div>
-            <nav className="orderbuttons">
- <button onClick={()=> setOrder("desc")}className="orderbutton1" >Sort By Desc</button>
- <button onClick={()=> setOrder("asc")} className="orderbutton2" >Sort By Asc</button>
- </nav>
+//         <div>
+//             <nav className="orderbuttons">
+//  <button onClick={()=> setOrder("desc")}className="orderbutton1" >Sort By Desc</button>
+//  <button onClick={()=> setOrder("asc")} className="orderbutton2" >Sort By Asc</button>
+//  </nav>
          
- </div>
- 
+//  </div>
+ <button className="orderbutton1"
+ onClick={() => setOrder((prevState) => prevState === "desc" ? "asc" : "desc") }
+>
+ Change order
+</button>
 
 
 
