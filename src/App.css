@@ -124,19 +124,31 @@ padding: 1%;
   border: 1px solid black;
 }
 .orderbuttons{
-  display: flex;
-  flex-direction: row;
-flex-wrap: wrap;
-
-justify-content: center;
-gap:10px;
+  display: block;
+position: relative;
+cursor:pointer;
+-webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
-.orderbutton1{
-  background-color:white;
+
+.radio{
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #5a2121;
+  border-radius: 50%;
+}
+.orderbutton1 input:checked  ~ .radio{
+  background-color:orangered;
+ 
   text-decoration: none;
   font-size: large;
-  border-radius: 2px;
-  border : 1px solid black;
+  align-self: center;
+ 
 }
 .orderbutton2{
   background-color:white;
@@ -246,6 +258,7 @@ padding: 10px;
 margin: 15px;
     border : 1px solid darkgreen;
     border-radius: 10px;
+    background-color: white;
   }
   .Deletebutton{
     background-color:white;

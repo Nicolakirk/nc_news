@@ -17,10 +17,12 @@ const OrderButtons =({setSortList, sortList})=>{
 
     const params = useParams();
     const sort_by = params.sort_by;
-    
-    useEffect(()=>{
-       setisLoading(true);
 
+
+    const onChangeValue=(event)=>{
+        console.log(event.target.value);
+    
+const order = event.target.value
     getArticles(sort_by, order)
     .then((newarticles)=>{
         setSortList(newarticles);
@@ -29,10 +31,8 @@ const OrderButtons =({setSortList, sortList})=>{
             console.log(err);
         });
        
-    },[ order]);
-
  
-
+    }
 
 
     return (
@@ -43,12 +43,33 @@ const OrderButtons =({setSortList, sortList})=>{
 //  </nav>
          
 //  </div>
- <button className="orderbutton1"
- onClick={() => setOrder((prevState) => prevState === "desc" ? "asc" : "desc") }
->
- Change order
-</button>
+//  <button className="orderbutton1"
+//  onClick={() => setOrder((prevState) => prevState === "desc" ? "asc" : "desc") }
+// >
+//  Change order
+// </button>
 
+
+
+<div onChange={onChangeValue} className="orderbuttons">
+{sort_by === "created_at" ?<p> Order by Date</p>  :null}
+{sort_by === "votes" ?<p> Order by Number of Votes</p>  :null}
+{sort_by === "Comment_count" ?<p> Order by Number of Comments</p>  :null}
+   
+    <input type="radio" value="asc"
+         name="sort" className="orderbutton1"
+         /> Ascending
+        <input type="radio" 
+        value="desc" 
+        name="sort"
+        defaultChecked
+        className="orderbutton2"
+        /> descending
+       
+        </div>
+ 
+    
+    
 
 
    )

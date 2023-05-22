@@ -74,7 +74,8 @@ return response.data.articles;
         }
 
         export const getArticles= (sort_by="created_at", order)=>{
-         
+         console.log(sort_by)
+         console.log(order);
             return newsApi.get(`/articles/?sort_by=${sort_by}&&order=${order}`).then(({data})=> {
                 console.log(data.articles)
                 return data.articles

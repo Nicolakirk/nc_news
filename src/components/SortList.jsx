@@ -33,9 +33,10 @@ const SortList=({setArticlesList, articlesList})=>{
     return(
         <div>
 
+{sort_by === "created_at" ?<h2 className="sortlistheader"> Here are the articles Sorted by Date </h2>  :null}
 
-<h2 className="sortlistheader"> Here are the articles sorted by {sort_by} </h2>
-
+{sort_by === "votes" ?<h2 className="sortlistheader"> Here are the articles Sorted by Number of Votes </h2>  :null}
+{sort_by === "comment_count" ?<h2 className="sortlistheader"> Here are the articles Sorted byNumber of Comments </h2>  :null}
 <OrderButtons sortList={sortList} setSortList={setSortList}/>
             <p className="sortlist"
             >
