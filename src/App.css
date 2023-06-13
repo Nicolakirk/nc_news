@@ -3,7 +3,8 @@
   text-align: center;
   font-size: large;
   margin: 5%;
-  background-color: rgb(212, 219, 225);
+  background-color:#B5CCDC
+  ;
   font-family:Arial, Helvetica, sans-serif;
 }
 
@@ -22,7 +23,7 @@ a:any-link{
   }
 }
 
-.App-header {
+/* .App-header {
   background-color: #0a1629;
   min-height: 100vh;
   display: flex;
@@ -32,11 +33,14 @@ a:any-link{
 
   font-size: calc(10px + 2vmin);
   color: white;
-}
+} */
 
 .App-link {
   color: coral;
 }
+
+
+
 
 @keyframes App-logo-spin {
   from {
@@ -48,7 +52,15 @@ a:any-link{
 }
 .Article-title{
   text-decoration: none;
-  color:black;
+  color:#183B52;
+  font-family:monospace;
+  font-size: 32px ;
+  font-weight: bold;
+  font-stretch:expanded;
+}
+.article-paragraph{
+  padding: 5%;
+ 
 }
 
 .Sortbuttons{
@@ -120,8 +132,8 @@ padding: 1%;
   padding:5rem;
   margin: 1rem;
   background-color: white;
-  border-radius: 5px;
-  border: 1px solid black;
+  border-radius: 10px;
+  border: none;
 }
 .orderbuttons{
   display: block;
@@ -186,11 +198,13 @@ justify-content: center;
 
 
 .votebutton{
-  background-color:darkgreen;
+  background-color:#C44840;
   color:white;
   font-size: large;
-  border-radius: 20pc;
-  border-color: darkgreen;
+border:none;
+border-radius: 5%;
+padding: 10px;
+  
 }
 .commentsform{
   width:90%;
@@ -213,20 +227,25 @@ justify-content: center;
 .commentsform .grid_item2{
   grid-column: 1/2;
   grid-row: 2/4;
- 
+ padding:5%;
+ border: none;
+ border-radius: 5%;
 }
 .commentsform .grid_item3 {
   grid-column: 1/1;
  padding: 10px;
+ 
 }
 .button {
 
   background-color:white;
-  color: darkgreen;
+  color: #C44840;
   border-radius: 20px;
-  border : 3px solid darkgreen;
+  border : 3px solid #C44840;
   font-size: large;
+  padding: 10px;
   vertical-align: bottom;
+  font-weight: bold;
 
 }
 /* .commentsboxes {
@@ -256,15 +275,18 @@ justify-content: center;
     flex-direction: column;
 padding: 10px;
 margin: 15px;
-    border : 1px solid darkgreen;
+    border : none;
     border-radius: 10px;
+    padding: 5%;
     background-color: white;
   }
   .Deletebutton{
     background-color:white;
-    color: darkgreen;
+    color: #C44840;
     border-radius: 10px;
-    border : 1px solid darkgreen;
+    border : 2px solid #C44840;
+    padding: 10px;
+    font-weight: bold;
     font-size: large;
     vertical-align: botto;
   }
@@ -276,4 +298,45 @@ margin: 15px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.nav{
+  display: flex;
+  justify-content: center;
+  gap: 10%;
+  background-color: #6A8F93;
+}
+
+
+.dropbtn {
+  background-color:#6A8F93;
+  color:black;
+  padding: 16px;
+  font-size: 20px;
+  border: none;
+}
+.dropdown {
+  position:relative;
+  display: inline-block;
+  align-items: center;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #F4E7DE;
+  color: #C44840;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-content  a{
+  color: #243431;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+}
+.dropdown-content a:hover {background-color: #B5CCDC;}
+.dropdown:hover .dropdown-content {display: block;}
+.dropdown:hover .dropbtn {background-color:#B5CCDC;
 }

@@ -64,7 +64,7 @@ const order = event.target.value
         name="sort"
         defaultChecked
         className="orderbutton2"
-        /> descending
+        /> descending(default)
        
         </div>
  

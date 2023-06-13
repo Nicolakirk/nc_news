@@ -1,7 +1,7 @@
 
 import './App.css';
 import ArticlesList from './components/ArticlesList';
-import Header from './components/header';
+import Header from './components/Header';
 import { Routes, Route } from 'react-router-dom';
 import React from 'react';
 import { useState } from "react";
@@ -18,7 +18,7 @@ function App() {
   const[topicsListView, setTopicsListView]= useState([]);
   return (
     <div className="App">
-      <Header/>
+      <Header topicsListView={topicsListView}    setTopicsListView={setTopicsListView}/>
       <Routes>
         <Route path = '/' element = { <ArticlesList articlesList={articlesList} setArticlesList={setArticlesList} topicsListView={topicsListView}    setTopicsListView={setTopicsListView}/> } />
         <Route path = '/articles' element = { <ArticlesList articlesList={articlesList} setArticlesList={setArticlesList} topicsListView={topicsListView}    setTopicsListView={setTopicsListView}/>} />

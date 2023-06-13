@@ -2,8 +2,8 @@ import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchTopicArticles } from "../utils/api";
 import ArticleCard from "./ArticleCard";
-import SortButtons from "./SortButtons";
-import OrderButtons from "./OrderButtons";
+
+import {useLocation} from "react-router-dom";
 
 
 
@@ -13,28 +13,31 @@ const TopicsList =({setArticlesList, articlesList})=>{
     const params = useParams();
     
     const topic= params.topic;
-    const [articlesListbyTopic, setArticlesListByTopic]=useState([]);
 
+   
+    const [articlesListbyTopic, setArticlesListByTopic]=useState([]);
+    const location = useLocation();
     useEffect(()=>{
         setIsLoading(true);
         fetchTopicArticles(topic).then((articles)=>{
             console.log(articles)
-            setArticlesList(articles);
+            setArticlesListByTopic(articles);
             setIsLoading(false);
         })
-    },[]);
+    },[location]);
     if(isLoading){
         return <p> is Loading</p>;
     }
         return(
             <div>
-                
+             
           
                 <h4 className="topiclistheader"> Here are the articles about {topic}</h4>
             <p className="topicboxes"
             >
-             {articlesList.map((article)=>{
-             return (  <ArticleCard article={article} articlesList={articlesList} setArticlesList={setArticlesList}/>
+                 
+             {articlesListbyTopic.map((article)=>{
+             return (  <ArticleCard article={article} articlesListbyTopic={articlesListbyTopic} setArticlesListByTopic={setArticlesListByTopic}/>
            
 
              )

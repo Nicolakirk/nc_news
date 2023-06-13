@@ -3,7 +3,7 @@ import SingleCardView from "./SingleCardView";
 
       const ArticleCard =({article, articlesList, setArticlesList})=>{
       
-   console.log(article)
+  
 
       return (
       <Link to={`/articles/${article.article_id}`} >

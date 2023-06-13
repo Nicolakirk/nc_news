@@ -23,14 +23,13 @@ const ArticlesList =({articlesList, setArticlesList, topicsListView, setTopicsLi
       }
 return (
     <div>
-    <h2 className="Article-title">Here Are All The Articles</h2>
+    <h2 className="Article-title">NC News</h2>
+    <p className="article-paragraph"> Welcome to NC News. This is a Reddit style news app. You can view articles sorted by comments, votes, topics and date.  Add a comment to an article, vote for an article and delete articles. </p>
     <div >
     {/* <OrderButtons articlesList={articlesList}
             setArticlesList={setArticlesList}/> */}
 
-<SortButtons articlesList={articlesList}setArticlesList={setArticlesList}/>
 
-            <TopicButtons topicsListView={topicsListView} setTopicsListView={setTopicsListView}/>
             
 
 

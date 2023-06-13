@@ -15,6 +15,7 @@ import { fetchTopics } from "../utils/api"
             fetchTopics().then((topics)=>{
                 setTopicsListView(topics)
                 setIsLoading(false);
+                
             })
         },[])
         if(isLoading){
